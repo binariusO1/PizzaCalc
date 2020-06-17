@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.binario.pizzacalc.MainActivity">
+    <item
+        android:id="@+id/popmenu_ratethisapp"
+        android:checked="false"
+        android:title="@string/popmenu_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/popmenu_update"
+        android:title="@string/popmenu_update"
+        />
+    <item
+        android:id="@+id/popmenu_help"
+        android:title="@string/popmenu_help" />
+    <item
+        android:id="@+id/popmenu_about"
+        android:title="@string/popmenu_about"/>
+</menu>

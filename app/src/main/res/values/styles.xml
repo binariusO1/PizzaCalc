@@ -1,0 +1,72 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+
+        <!-- define attribute for OverflowMenu -->
+        <item name="actionOverflowMenuStyle">@style/popupOverflowMenu</item>
+    </style>
+
+    <!-- change background for OverflowMenu -->
+    <style name="popupOverflowMenu" parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
+        <item name="android:popupBackground">@drawable/popmenu_background</item>
+    </style>
+
+    <!-- Action bar (toolbar) application theme. -->
+    <style name="ActionBar.Solid.Example" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <!-- remove color bar to good ripple menu dot effect-->
+        <!--item name="android:background">@android:color/transparent</item-->
+        <!-- change text color-->
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <!-- change color menu dot-->
+        <item name="android:textColorSecondary">#FFFFFF</item>
+        <!-- change color ripple menu dot-->
+        <item name="android:colorControlHighlight">@color/colorLight</item>
+
+    </style>
+
+    <!-- PopupMenu theme. -->
+    <style name="PopupMenu.Custom" parent="@style/Widget.AppCompat.Light.PopupMenu">
+        <item name="popupMenuStyle">@style/PopupMenu.Custom</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">8dp</item>
+        <item name="android:dropDownHorizontalOffset">-150dp</item>
+
+        <item name="android:textColor">#000000</item>
+
+        <item name="android:colorControlHighlight">@color/colorPrimary</item>
+
+        <item name="android:paddingRight">0dp</item>
+        <item name="android:paddingLeft">0dp</item>
+
+        <!-- customize item list -->
+        <item name="android:dropDownListViewStyle">@style/PopupMenuListView</item>
+        <!-- Doesn't working. -->
+        <!--item name="android:popupBackground">#FFFFFF</item-->
+    </style>
+
+    <!-- customize item list -->
+    <style name="PopupMenuListView" parent="@style/Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">#dddddd</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <item name="android:selectableItemBackground">@color/colorLight</item>
+        <item name="android:colorControlHighlight">@color/colorLight</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    </style>
+
+
+</resources>
