@@ -5,24 +5,52 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/FirstFragment">
 
+    <!-- main menu -->
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.binario.pizzacalc.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
-
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_MainMenuFragment_to_SecondFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_MainMenuFragment_to_ThirdFragment"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:destination="@id/ThirdFragment" />
     </fragment>
+
+
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.binario.pizzacalc.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
-
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_SecondFragment_to_MainMenuFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
             app:destination="@id/FirstFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/ThirdFragment"
+        android:name="com.binario.pizzacalc.ThirdFragment"
+        android:label="_NONE_"
+        tools:layout="@layout/fragment_third">
+
+        <action
+            android:id="@+id/action_ThirdFragment_to_MainMenuFragment"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            app:destination="@id/FirstFragment" />
+
+    </fragment>
+
+
+
+
 </navigation>

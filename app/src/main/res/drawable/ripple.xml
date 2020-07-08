@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorLight"
+    android:radius="19dp"  >
+    <!-- use below for chrome button ripple efect -->
+    <!-- <item android:drawable="@drawable/menu_3dot_ripple_background"/> -->
+</ripple>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorWhite">
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorWhite" />
+            <corners android:topLeftRadius="15dp"
+                android:topRightRadius="15dp"
+                android:bottomRightRadius="15dp"
+                android:bottomLeftRadius="15dp"
+                />
+        </shape>
+    </item>
+    <item><layer-list>
+        <item android:id="@android:id/background">
+            <shape android:shape="rectangle">
+                <gradient
+                    android:angle="90"
+                    android:type="linear" />
+                    <!--android:endColor="@color/colorAccent"-->
+                    <!--android:startColor="@color/colorAccent"-->
+
+                <corners android:topLeftRadius="15dp"
+                    android:topRightRadius="15dp"
+                    android:bottomLeftRadius="15dp"
+                    android:bottomRightRadius="15dp"
+                    />
+                <!--<stroke
+                    android:width="2dp"
+                android:color="@color/colorAccent"/>-->
+            <padding
+                android:bottom="5dp"
+                android:left="5dp"
+                android:right="5dp"
+                android:top="5dp" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_arror_right"
+        android:gravity="start|center"
+        android:width="26dp"
+        android:height="26dp"
+android:start="0dp"
+        >
+    </item>
+    <item android:drawable="@drawable/ic_arror_right"
+        android:gravity="start|center"
+        android:width="26dp"
+        android:height="26dp"
+        android:start="17dp"
+        >
+    </item>
+    <item android:drawable="@drawable/ic_delete_24dp"
+        android:gravity="end|center"
+        android:width="34dp"
+        android:height="34dp"
+        android:start="36dp"
+        >
+    </item>
+</layer-list></item>
+</ripple>

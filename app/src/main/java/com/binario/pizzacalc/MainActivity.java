@@ -1,38 +1,134 @@
 package com.binario.pizzacalc;
 
-import android.content.Context;
+import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
-import android.view.ContextThemeWrapper;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.PopupWindow;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    ImageButton button_about_back;
+    View activityView;
+    public static int current_fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        activityView = findViewById(android.R.id.content);
+        button_about_back = findViewById(R.id.button_about_back);
+        //toolbar.setNavigationIcon(R.drawable.button_delete);
+        /*
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                MainActivity.this.onBackPressed();
             }
         });
+
+
+
+*/
+
+        setSupportActionBar(toolbar);
+        //Add back navigation in the title bar
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //delete title from toolbar
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+/*
+        {
+            findViewById(R.id.button_about_back2).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (current_fragment == 2) {
+                        Toast.makeText(view.getContext(), "BACK_BUTTON_SECOND", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+
+ */
+        //--------------------------------------------------------
+        {
+            findViewById(R.id.button_about_back).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    //button_about_back.setPressed(true);
+                    //onBackPressed();
+                    //Fragment fragment = getSupportFragmentManager().findFragmentByTag("nav_host_fragment");
+                    if (current_fragment == 1) {
+                        //Toast.makeText(view.getContext(), "BACK_BUTTON_FIRST", Toast.LENGTH_SHORT).show();
+
+                    } else if (current_fragment == 2) {
+                        //Toast.makeText(view.getContext(), "BACK_BUTTON_SECOND", Toast.LENGTH_SHORT).show();
+
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Animation rotate = (Animation) AnimationUtils.loadAnimation(activityView.getContext(), R.anim.rotate);
+                                button_about_back.setAnimation(rotate);
+
+                                Fragment f = (Fragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+                                NavHostFragment.findNavController(f).navigate(R.id.action_SecondFragment_to_MainMenuFragment);
+                                //SecondFragment.back();
+                                current_fragment = 0;
+                                // hide your button here
+                                button_about_back.setEnabled(false);
+                                button_about_back.setVisibility(View.GONE);
+                            }
+                        }, 125);
+
+                    } else if (current_fragment == 3) {
+                        //Toast.makeText(view.getContext(), "BACK_BUTTON_THIRD", Toast.LENGTH_SHORT).show();
+
+
+
+
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Animation rotate = (Animation) AnimationUtils.loadAnimation(activityView.getContext(), R.anim.rotate);
+                                button_about_back.setAnimation(rotate);
+                                Fragment f = (Fragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+                                NavHostFragment.findNavController(f).navigate(R.id.action_ThirdFragment_to_MainMenuFragment);
+
+                                current_fragment = 0;
+                                // hide your button here
+                                button_about_back.setEnabled(false);
+                                button_about_back.setVisibility(View.GONE);
+                            }
+                        }, 125);
+                    }
+
+
+                    //Toast.makeText(view.getContext(), "BACK_BUTTON", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
     }
 
     @Override
@@ -44,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
         //popup.getMenuInflater().inflate(R.menu.menu_main, popup.getMenu());
 
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 
@@ -58,7 +155,40 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.popmenu_about) {
             return true;
         }
-
+        //if (id == R.id.button_about_back) {
+         //   onBackPressed();
+         //   return true;
+        //}
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+
+     if(current_fragment==3 || current_fragment==2){
+
+         Animation rotate = (Animation) AnimationUtils.loadAnimation(activityView.getContext(), R.anim.rotate);
+         button_about_back.setAnimation(rotate);
+         //Fragment f = (Fragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        // NavHostFragment.findNavController(f).navigate(R.id.action_ThirdFragment_to_MainMenuFragment);
+         current_fragment = 0;
+
+         new Handler().postDelayed(new Runnable() {
+             @Override
+             public void run() {
+
+                 // hide your button here
+                 button_about_back.setEnabled(false);
+                 button_about_back.setVisibility(View.GONE);
+             }
+         }, 50);
+     }
+     if(current_fragment==1)
+     {
+finish();
+     }
+     else
+        super.onBackPressed();
+    }
+
 }

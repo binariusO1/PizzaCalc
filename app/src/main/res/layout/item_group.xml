@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/ig_layout_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/colorSecondary"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/ig_layout_number"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ig_bar"
+        app:layout_constraintBottom_toTopOf="@id/ig_bottom_bar"
+        >
+        <TextView
+            android:id="@+id/ig_position_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingStart="5dp"
+            android:text="1"
+            />
+    </LinearLayout>
+
+    <!--bar-->
+    <LinearLayout
+        android:id="@+id/ig_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ig_layout_number"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="@dimen/adapter_text_bar"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="@dimen/adapter_first_item"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ig_text_diameter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="diameter"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/ig_text_diameter_units"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="[CM]"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="@dimen/adapter_second_item"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ig_text_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="price"
+                    android:textAlignment="center" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="@dimen/adapter_third_item"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/ig_text_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="amount"
+                    android:textAlignment="center" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="100dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ig_text_mm"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="price/cm^2" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/ig_rl_pizza_list"
+        app:layout_constraintTop_toBottomOf="@+id/ig_bar"
+        app:layout_constraintStart_toStartOf="@+id/ig_bar"
+        android:layout_width="@dimen/adapter_text_bar"
+        android:layout_height="40dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ig_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#0004ED00"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+
+    <!--<LinearLayout
+        android:id="@+id/ig_layout_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/ig_button_delete"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_delete_arrow" />
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/ig_layout_add_pizza"
+        android:layout_width="@dimen/adapter_text_bar"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingStart="70dp"
+        app:layout_constraintBottom_toTopOf="@id/ig_bottom_bar"
+        app:layout_constraintStart_toEndOf="@+id/ig_layout_number"
+        >
+        <Button
+            android:id="@+id/ig_expand_button_pizza"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/button_add" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:text="add Pizza"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        app:layout_constraintStart_toEndOf="@+id/ig_rl_pizza_list"
+        app:layout_constraintTop_toTopOf="@id/ig_rl_pizza_list"
+        app:layout_constraintBottom_toBottomOf="@+id/ig_rl_pizza_list"
+        >
+        <TextView
+            android:id="@+id/ig_score"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ig_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:background="#40919191"
+        android:layout_marginBottom="0dp"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

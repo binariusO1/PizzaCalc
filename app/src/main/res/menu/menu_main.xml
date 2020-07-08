@@ -5,11 +5,15 @@
     <item
         android:id="@+id/popmenu_ratethisapp"
         android:checked="false"
-        android:title="@string/popmenu_settings"
+        android:title="@string/popmenu_rateapp"
         app:showAsAction="never" />
     <item
         android:id="@+id/popmenu_update"
         android:title="@string/popmenu_update"
+        />
+    <item
+        android:id="@+id/popmenu_settings"
+        android:title="@string/popmenu_settings"
         />
     <item
         android:id="@+id/popmenu_help"

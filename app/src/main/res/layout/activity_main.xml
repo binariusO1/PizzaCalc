@@ -14,20 +14,41 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp"
+            android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:popupTheme="@style/PopupMenu.Custom" />
+            android:theme="@style/ActionBar.Solid.Example"
+            app:popupTheme="@style/PopupMenu.Custom" >
+            <ImageButton
+                android:id="@+id/button_about_back"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="0dp"
+                android:background="@drawable/ripple"
+                android:src="@drawable/ic_arrow_back_24dp"
+                android:foregroundGravity="right"
+                android:scaleType="centerInside"
+                android:duplicateParentState="false"
+                android:visibility="visible" />
+            <TextView
+                android:id="@+id/action_bar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="#FFFFFF"
+                android:text="@string/app_name" />
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

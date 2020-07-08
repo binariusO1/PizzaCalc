@@ -27,7 +27,7 @@
         <item name="android:textColorSecondary">#FFFFFF</item>
         <!-- change color ripple menu dot-->
         <item name="android:colorControlHighlight">@color/colorLight</item>
-
+        <item name="android:elevation">8dp</item>
     </style>
 
     <!-- PopupMenu theme. -->
@@ -68,5 +68,15 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
     </style>
 
+    <style name="MyThemeOverlayAlertDialog" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:windowBackground">@color/colorSecondary</item>
+        <item name="android:windowMinWidthMinor">100dp</item>
+        <item name="android:windowMinWidthMajor">100dp</item>
+    </style>
+    <style name="MyThemeOverlayAlertDialog_itemPizzaOption" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowMinWidthMinor">100dp</item>
+        <item name="android:windowMinWidthMajor">100dp</item>
+    </style>
 
 </resources>
