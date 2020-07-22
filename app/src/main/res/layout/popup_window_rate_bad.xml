@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="220dp"
+    android:layout_height="315dp"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:minWidth="220dp"
+    android:paddingBottom="15dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="15dp"
+    android:gravity="center_horizontal"
+    >
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/rate_text_bad"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/rate_1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_send"
+            android:onClick="sendFeedback_rate"
+            />
+
+    </LinearLayout>
+</LinearLayout>

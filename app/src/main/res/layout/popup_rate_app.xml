@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="290dp"
+    android:layout_height="315dp"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:minWidth="290dp"
+    android:paddingBottom="20dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:paddingTop="20dp"
+    >
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/rate_text"
+         />
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:contentDescription="@string/vote_angry"
+            android:id="@+id/rate_1"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_rate_1"
+            android:onClick="rate_1"
+            />
+
+        <Button
+            android:contentDescription="@string/vote_sad"
+            android:id="@+id/rate_2"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_rate_2"
+            android:onClick="rate_2"
+            />
+
+        <Button
+            android:contentDescription="@string/vote_neutral"
+            android:id="@+id/rate_3"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_rate_3"
+            android:onClick="rate_3"
+            />
+
+
+        <Button
+            android:contentDescription="@string/vote_happy"
+            android:id="@+id/rate_4"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_rate_4"
+            android:onClick="rate_4"
+            />
+
+        <Button
+            android:contentDescription="@string/vote_very_happy"
+            android:id="@+id/rate_5"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_rate_5"
+            android:onClick="rate_5"
+            />
+    </LinearLayout>
+</LinearLayout>

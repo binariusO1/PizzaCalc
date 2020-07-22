@@ -2,9 +2,13 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <!-- adapter items -->
-    <dimen name="adapter_text_bar">240dp</dimen>
+        <!-- -->
+        <dimen name="adapter_text_bar">300dp</dimen>
+        <dimen name="adapter_item_pizza_options">298dp</dimen>  <!-- -2 adapter_text_bar-->
+        <dimen name="adapter_item_pizza_options_r">330dp</dimen>  <!-- +30 adapter_text_bar-->
+        <!-- -->
     <dimen name="adapter_first_item">100dp</dimen>
-    <dimen name="adapter_second_item">80dp</dimen>
-    <dimen name="adapter_third_item">60dp</dimen>
+    <dimen name="adapter_second_item">100dp</dimen>
+    <dimen name="adapter_third_item">100dp</dimen>
     <dimen name="adapter_item">70dp</dimen>
 </resources>

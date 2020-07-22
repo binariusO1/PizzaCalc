@@ -24,7 +24,7 @@
             android:theme="@style/ActionBar.Solid.Example"
             app:popupTheme="@style/PopupMenu.Custom" >
             <ImageButton
-                android:id="@+id/button_about_back"
+                android:id="@+id/button_appbar_back"
                 android:layout_width="38dp"
                 android:layout_height="38dp"
                 android:layout_gravity="start"
@@ -34,7 +34,34 @@
                 android:foregroundGravity="right"
                 android:scaleType="centerInside"
                 android:duplicateParentState="false"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:tooltipText="@string/tooltip_back"/>
+            <ImageButton
+                android:id="@+id/button_reset"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="0dp"
+                android:background="@drawable/ripple"
+                android:src="@drawable/ic_refresh"
+                android:foregroundGravity="right"
+                android:scaleType="centerInside"
+                android:duplicateParentState="false"
+                android:visibility="visible"
+                android:tooltipText="@string/tooltip_reset"/>
+            <ImageButton
+                android:id="@+id/button_help"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_gravity="end"
+                android:layout_marginStart="0dp"
+                android:background="@drawable/ripple"
+                android:src="@drawable/ic_help_outline"
+                android:foregroundGravity="right"
+                android:scaleType="centerInside"
+                android:duplicateParentState="false"
+                android:visibility="visible"
+                android:tooltipText="@string/tooltip_help"/>
             <TextView
                 android:id="@+id/action_bar_title"
                 android:layout_width="wrap_content"

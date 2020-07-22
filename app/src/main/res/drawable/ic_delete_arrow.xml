@@ -35,26 +35,13 @@
                 android:top="5dp" />
         </shape>
     </item>
-    <item android:drawable="@drawable/ic_arror_right"
+        <item android:drawable="@drawable/ic_delete_24dp"
         android:gravity="start|center"
-        android:width="26dp"
-        android:height="26dp"
+            android:width="34dp"
+            android:height="34dp"
 android:start="0dp"
         >
     </item>
-    <item android:drawable="@drawable/ic_arror_right"
-        android:gravity="start|center"
-        android:width="26dp"
-        android:height="26dp"
-        android:start="17dp"
-        >
-    </item>
-    <item android:drawable="@drawable/ic_delete_24dp"
-        android:gravity="end|center"
-        android:width="34dp"
-        android:height="34dp"
-        android:start="36dp"
-        >
-    </item>
+
 </layer-list></item>
 </ripple>

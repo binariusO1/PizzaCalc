@@ -3,54 +3,79 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/FragmentCompare">
 
     <!-- main menu -->
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.binario.pizzacalc.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/FragmentCompare"
+        android:name="com.binario.pizzacomparator.FragmentCompare"
+        android:label="@string/fragment_compare_label"
+        tools:layout="@layout/fragment_compare">
         <action
-            android:id="@+id/action_MainMenuFragment_to_SecondFragment"
+            android:id="@+id/action_FragmentCompare_to_FragmentAbout"
             app:enterAnim="@anim/enter_from_right"
             app:exitAnim="@anim/exit_to_left"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/FragmentAbout" />
         <action
-            android:id="@+id/action_MainMenuFragment_to_ThirdFragment"
+            android:id="@+id/action_FragmentCompare_to_FragmentSettings"
             app:enterAnim="@anim/enter_from_right"
             app:exitAnim="@anim/exit_to_left"
-            app:destination="@id/ThirdFragment" />
-    </fragment>
-
-
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.binario.pizzacalc.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+            app:destination="@id/FragmentSettings" />
         <action
-            android:id="@+id/action_SecondFragment_to_MainMenuFragment"
-            app:enterAnim="@anim/enter_from_left"
-            app:exitAnim="@anim/exit_to_right"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_FragmentCompare_to_FragmentHelp"
+            app:enterAnim="@anim/enter_from_right"
+            app:exitAnim="@anim/exit_to_left"
+            app:destination="@id/FragmentHelp" />
+        <action
+            android:id="@+id/action_FragmentCompare_to_FragmentRefresh"
+            app:enterAnim="@anim/enter_disappear"
+            app:destination="@id/FragmentRefresh" />
     </fragment>
 
     <fragment
-        android:id="@+id/ThirdFragment"
-        android:name="com.binario.pizzacalc.ThirdFragment"
-        android:label="_NONE_"
-        tools:layout="@layout/fragment_third">
-
+        android:id="@+id/FragmentSettings"
+        android:name="com.binario.pizzacomparator.FragmentSettings"
+        android:label="@string/fragment_settings_label"
+        tools:layout="@layout/fragment_settings">
         <action
-            android:id="@+id/action_ThirdFragment_to_MainMenuFragment"
+            android:id="@+id/action_FragmentSettings_to_FragmentCompare"
             app:enterAnim="@anim/enter_from_left"
             app:exitAnim="@anim/exit_to_right"
-            app:destination="@id/FirstFragment" />
-
+            app:destination="@id/FragmentCompare" />
+    </fragment>
+    <fragment
+        android:id="@+id/FragmentHelp"
+        android:name="com.binario.pizzacomparator.FragmentHelp"
+        android:label="@string/fragment_help_label"
+        tools:layout="@layout/fragment_help">
+        <action
+            android:id="@+id/action_FragmentHelp_to_FragmentCompare"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            app:destination="@id/FragmentCompare" />
     </fragment>
 
+    <fragment
+        android:id="@+id/FragmentAbout"
+        android:name="com.binario.pizzacomparator.FragmentAbout"
+        android:label="@string/fragment_about_label"
+        tools:layout="@layout/fragment_about">
+        <action
+            android:id="@+id/action_FragmentAbout_to_FragmentCompare"
+            app:enterAnim="@anim/enter_from_left"
+            app:exitAnim="@anim/exit_to_right"
+            app:destination="@id/FragmentCompare" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/FragmentRefresh"
+        android:name="com.binario.pizzacomparator.FragmentRefresh"
+        android:label="TEXT"
+        tools:layout="@layout/fragment_refresh">
+        <action
+            android:id="@+id/action_FragmentRefresh_to_FragmentCompare"
+            app:destination="@id/FragmentCompare" />
+    </fragment>
 
 
 </navigation>
