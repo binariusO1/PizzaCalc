@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/colorLight">
+    <item android:id="@android:id/mask">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorLight" />
+            <corners android:topLeftRadius="19dp"
+                android:topRightRadius="19dp"
+                android:bottomRightRadius="19dp"
+                android:bottomLeftRadius="19dp"
+                />
+        </shape>
+    </item>
+    <item><layer-list>
+        <item android:drawable="@drawable/abc_vector_test"
+            android:gravity="center|center"
+            android:width="24dp"
+            android:height="24dp"
+            android:bottom="0dp"
+            >
+        </item>
+    </layer-list></item>
+</ripple>
